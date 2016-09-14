@@ -1,5 +1,7 @@
 # home-automation-mockup
-A mock up/click dummy of a web interface for a home automation website. Created using HTML/JS/CSS and the following:
+A mock up/click dummy of a web interface for a home automation website. Not yet configured to be responsive on mobile or small screens. Clone project and open index.html in Google Chrome or Firefox.
+
+Created using HTML/JS/CSS and the following:
  - Google's Material Design Lite (https://getmdl.io/)
   - Cards, switches, icons and slider
  - Bootstrap (http://getbootstrap.com/getting-started/)
