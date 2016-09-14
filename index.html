@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico?v=3">
+
+  <title>XYZ Home Automation</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!--Toastr-->
+  <link rel="stylesheet" href="toastr/toastr.min.css">
+
+  <!--Material Design Lite -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.teal-indigo.min.css">
+
+  <!-- Material Design for Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" >
+
+  <!-- Material Design for Bootstrap -->
+  <link href="css/mdb.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/xyz-custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-fixed-top z-depth-2 xyz-navbar">
+    <div class="container ">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand waves-effect waves-light" href="#">XYZ</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#products" class="waves-effect waves-light">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li><a href="#">Devices</a></li>
+          <li><a href="#">Logs</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+        <div class="navbar-right">
+          <ul class="nav navbar-nav">
+            <!--<li>
+              <button class="btn btn-white"><i class="fa fa-plus"></i>  Device</button></li>-->
+
+              <li><div class="greeting-container">
+                <span class="xyz-nav-date-time" id="date"></span><br>
+                <span class="xyz-nav-date-time" id="time"></span>
+              </div></li>
+              <li>
+                <div class="row" style="margin-left: 10px">
+                  <div class="col-xs-6">
+                <div class="blank-circle" style="margin-top: 5px; display: inline-block"></div>
+              </div>
+              <div class="col-xs-6">
+                <div class="xyz-nav-greeting" style="display: inline-block; margin-top: 16px">Lily</i></div>
+              </div>
+              </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row"  style="padding-top:60px">
+        <div class="col-sm-9 col-md-9 main">
+          <h3 class="page-header">Dashboard</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="grid">
+          <div class="grid-sizer"></div>
+          <div class="gutter-sizer"></div>
+
+          <!--Image Card-->
+          <div class="card hoverable grid-item grid-item--width2">
+            <div class="card-content">
+              <span class="card-title">Video Feeds</span>
+              <button id="menu-video" class="mdl-button mdl-js-button mdl-button--icon" style="float: right">
+                <i class="fa fa-ellipsis-v light-grey"></i>
+              </button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="menu-video">
+              <li class="mdl-menu__item">Customise</li>
+              <li class="mdl-menu__item">Remove from Dashboard</li>
+            </ul>
+            <div class="row" style="padding-bottom: 15px; padding-top:15px  ">
+              <div class="col-md-4 col-sm-4">
+                <img src="img/front-door.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Front Door</p>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <img src="img/kitchen.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Kitchen</p>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <img src="img/living-room-1.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Living Room 1</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <img src="img/living-room-2.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Living Room 2</p>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <img src="img/garden-1.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Garden 1</p>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <img src="img/garden-2.jpg" style="width: 100%; height: 100%;"></img>
+                <p class="caption">Garden 2</p>
+              </div>
+            </div>
+          </div>
+          <!--Image Card-->
+        </div>
+        <div>
+          <!--Image Card-->
+          <div class="card hoverable grid-item">
+            <div class="card-content">
+              <span class="card-title">Lights</span>
+              <button id="menu-lights" class="mdl-button mdl-js-button mdl-button--icon" style="float: right">
+                <i class="fa fa-ellipsis-v light-grey"></i>
+              </button>
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+              for="menu-lights">
+              <li class="mdl-menu__item">Customise</li>
+              <li class="mdl-menu__item">Remove from Dashboard</li>
+            </ul>
+            <div class="switch-container">
+              <span class="p"> Living Room 1</span>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="switch-1">
+                <input type="checkbox" id="switch-1" class="mdl-switch__input" checked onchange="notifyOnOff('Lights (Living Room 1)', this.checked)">
+              </label>
+            </div>
+
+            <div class="switch-container">
+              <span class="p"> Living Room 2</span>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="switch-5">
+                <input type="checkbox" id="switch-5" class="mdl-switch__input" onchange="notifyOnOff('Lights (Living Room 2)', this.checked)">
+              </label>
+            </div>
+
+            <div class="switch-container">
+              <span class="p"> Kitchen</span>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="switch-2">
+                <input type="checkbox" id="switch-2" class="mdl-switch__input" checked onchange="notifyOnOff('Lights (Kitchen)', this.checked)">
+              </label>
+            </div>
+
+            <div class="switch-container">
+              <span class="p">Master Bedroom </span>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="switch-3">
+                <input type="checkbox" id="switch-3" class="mdl-switch__input" checked onchange="notifyOnOff('Lights (Master Bedroom)', this.checked)">
+              </label>
+            </div>
+            <div class="switch-container">
+              <span class="p"> Porch </span>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="switch-4">
+                <input type="checkbox" id="switch-4" class="mdl-switch__input" onchange="notifyOnOff('Lights (Porch)', this.checked)">
+              </label>
+            </div>
+
+          </div>
+        </div>
+        <!--Image Card-->
+      </div>
+
+      <!--Image Card-->
+      <div class="card hoverable grid-item">
+        <div class="card-content">
+          <span class="card-title">Air Conditioning</span>
+          <button id="menu-aircon" class="mdl-button mdl-js-button mdl-button--icon" style="float: right">
+            <i class="fa fa-ellipsis-v light-grey"></i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="menu-aircon">
+          <li class="mdl-menu__item">Customise</li>
+          <li class="mdl-menu__item">Remove from Dashboard</li>
+        </ul>
+        <div class="slider-container">
+          <span class="p">Kitchen</span><span class="p" id="slider1temp" style="float: right; margin-right: 15px">19&deg;C</span>
+          <input id="slider1" class="mdl-slider mdl-js-slider" type="range"
+          min="5" max="40" value="19" tabindex="0"
+          oninput="showTemperature(this.value, this.id)" onchange="showTemperature(this.value, this.id)">
+        </div>
+        <div class="slider-container">
+          <span class="p">Living Room</span><span class="p" id="slider2temp" style="float: right; margin-right: 15px">22&deg;C</span>
+          <input id="slider2" class="mdl-slider mdl-js-slider" type="range"
+          min="5" max="40" value="22" tabindex="0"
+          oninput="showTemperature(this.value, this.id)" onchange="showTemperature(this.value, this.id)">
+        </div>
+        <div class="slider-container">
+          <span class="p">Master Bedroom</span><span class="p" id="slider3temp" style="float: right; margin-right: 15px">23&deg;C</span>
+          <input id="slider3" class="mdl-slider mdl-js-slider" type="range"
+          min="5" max="40" value="23" tabindex="0"
+          oninput="showTemperature(this.value, this.id)" onchange="showTemperature(this.value, this.id)">
+        </div>
+      </div>
+      <!--Image Card-->
+    </div>
+
+    <!--Image Card-->
+    <div class="card hoverable grid-item">
+      <div class="card-content" style="padding-bottom: 5px">
+        <span class="card-title">Appliances</span>
+        <button id="menu-appliances" class="mdl-button mdl-js-button mdl-button--icon" style="float: right">
+          <i class="fa fa-ellipsis-v light-grey"></i>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="menu-appliances">
+        <li class="mdl-menu__item">Customise</li>
+        <li class="mdl-menu__item">Remove from Dashboard</li>
+      </ul>
+    </div>
+
+    <div class="panel-group" id="appliancesAccordion" style="margin-bottom: 0px">
+
+      <div class="panel panel-default">
+        <div class="panel-heading"  data-toggle="collapse" href="#elements" data-parent="#accordion" style="cursor: pointer">
+          <span class="panel-title p">Stove <i class="fa fa-caret-down" style="float: right; margin-top: 7px"></i></span>
+        </div>
+        <div id="elements" class="panel-collapse collapse">
+          <div class="panel-body">
+
+            <div class="row" style="margin-left: 15px; margin-right: 10px;">
+              <div class="switch-container">
+                <span class="p">Element 1</span>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="el1switch">
+                  <input type="checkbox" id="el1switch" class="mdl-switch__input" onchange="activateSlider(this.checked, this.id); notifyOnOff('Stove (Element 1)', this.checked);">
+                </label>
+              </div>
+              <div class="row slider-container">
+                <div class="col-xs-10">
+                  <input id="el1slider" class="mdl-slider mdl-js-slider" type="range"
+                  min="0" max="10" value="0" tabindex="0"
+                  oninput="showValue(this.value, this.id)" onchange="showValue(this.value, this.id)" style="display: inline-block" disabled>
+                </div>
+                <div class="col-xs-2">
+                  <span class="p" id="el1value" style="float: right; margin-right: 15px; line-height: 1">Off</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 15px; margin-right: 10px;">
+              <div class="switch-container">
+                <span class="p">Element 2</span>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="el2switch">
+                  <input type="checkbox" id="el2switch" class="mdl-switch__input" onchange="activateSlider(this.checked, this.id); notifyOnOff('Stove (Element 2)', this.checked);">
+                </label>
+              </div>
+              <div class="row slider-container">
+                <div class="col-xs-10">
+                  <input id="el2slider" class="mdl-slider mdl-js-slider" type="range"
+                  min="0" max="10" value="0" tabindex="0"
+                  oninput="showValue(this.value, this.id)" onchange="showValue(this.value, this.id)" style="display: inline-block" disabled>
+                </div>
+                <div class="col-xs-2">
+                  <span class="p" id="el2value" style="float: right; margin-right: 15px; line-height: 1">Off</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 15px; margin-right: 10px;">
+              <div class="switch-container">
+                <span class="p">Element 3</span>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="el3switch">
+                  <input type="checkbox" id="el3switch" class="mdl-switch__input" onchange="activateSlider(this.checked, this.id); notifyOnOff('Stove (Element 3)', this.checked);">
+                </label>
+              </div>
+              <div class="row slider-container">
+                <div class="col-xs-10">
+                  <input id="el3slider" class="mdl-slider mdl-js-slider" type="range"
+                  min="0" max="10" value="0" tabindex="0"
+                  oninput="showValue(this.value, this.id)" onchange="showValue(this.value, this.id)" style="display: inline-block" disabled>
+                </div>
+                <div class="col-xs-2">
+                  <span class="p" id="el3value" style="float: right; margin-right: 15px; line-height: 1">Off</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-left: 15px; margin-right: 10px;">
+              <div class="switch-container">
+                <span class="p">Element 4</span>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="el4switch">
+                  <input type="checkbox" id="el4switch" class="mdl-switch__input" onchange="activateSlider(this.checked, this.id); notifyOnOff('Stove (Element 4)', this.checked);">
+                </label>
+              </div>
+              <div class="row slider-container">
+                <div class="col-xs-10">
+                  <input id="el4slider" class="mdl-slider mdl-js-slider" type="range"
+                  min="0" max="10" value="0" tabindex="0"
+                  oninput="showValue(this.value, this.id)" onchange="showValue(this.value, this.id)" style="display: inline-block" disabled>
+                </div>
+                <div class="col-xs-2">
+                  <span class="p" id="el4value" style="float: right; margin-right: 15px; line-height: 1">Off</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading"  data-toggle="collapse" href="#whiteboard" data-parent="#accordion" style="cursor: pointer">
+            <span class="panel-title p">Whiteboard <i class="fa fa-caret-down" style="float: right; margin-top: 7px"></i></span>
+          </div>
+
+          <div id="whiteboard" class="panel-collapse in">
+            <div class="panel-body">
+              <div class="switch-container">
+                <span class="p">Whiteboard Display</span>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" style="display: inline-block" for="wbswitch">
+                  <input type="checkbox" id="wbswitch" class="mdl-switch__input" onchange="activateTextfield(this.checked, this.id); notifyOnOff('Whiteboard Display', this.checked);">
+                </label>
+              </div>
+              <div>
+                <span class="p">Current Message:</span><br>
+                <span class="p" id="currentMessage" style="font-size: 12px">None</span>
+              </div>
+              <form>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <textarea class="mdl-textfield__input" type="text" rows= "3" id="wbtextfield" disabled></textarea>
+                  <label class="mdl-textfield__label" for="wb">Message</label>
+                </div>
+              </form>
+              <button class="btn btn-primary" id="wbbutton" disabled onclick="setWbMessage()">Display Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Image Card-->
+
+  <div class="card hoverable grid-item">
+    <div class="card-content" style="padding-bottom: 5px">
+      <span class="card-title">Logs</span>
+      <button id="menu-logs" class="mdl-button mdl-js-button mdl-button--icon" style="float: right">
+        <i class="fa fa-ellipsis-v light-grey"></i>
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+      for="menu-logs">
+      <li class="mdl-menu__item">Customise</li>
+      <li class="mdl-menu__item">Remove from Dashboard</li>
+    </ul>
+  </div>
+  <div class="panel-group" id="logs" style="margin-bottom: 0px">
+    <div class="panel panel-default" id="logs1">
+      <div class="panel-body">
+        <div class="p">Movement detected at Front Door.</div>
+        <span class="subscript pull-right">30 minutes ago</span>
+      </div>
+      <div class="panel panel-default" id="logs2">
+        <div class="panel-body">
+          <div class="p">Front door unlocked.</div>
+          <span class="subscript pull-right">5 hours ago</span>
+        </div>
+      </div>
+      <div class="panel panel-default" id="logs3">
+        <div class="panel-body">
+          <div class="p">Whiteboard message updated.</div>
+          <span class="subscript pull-right">5 hours ago</span>
+        </div>
+      </div>
+      <div class="panel panel-default" id="logs4">
+        <div class="panel-body">
+          <div class="p">Air Conditioning for Living Room turned off.</div>
+          <span class="subscript pull-right">18/05/16</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Image Card-->
+<div class="card hoverable grid-item">
+  <div class="card-content">
+    <span class="card-title">Add New Card</span>
+    <div class="light-grey plus"><i class="fa fa-plus"></i> </div>
+  </div>
+</div>
+<!--Image Card-->
+</div>
+</div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+<!--Toastr-->
+<script src="toastr/toastr.min.js"></script>
+
+<!--Masonry-->
+<script src="js/masonry.pkgd.min.js"></script>
+
+<!--Material Design Lite-->
+<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+<!-- Material Design Bootstrap -->
+<script type="text/javascript" src="js/mdb.js"></script>
+
+<!-- Custom JS-->
+<script src="js/app.js"></script>
+</body>
+</html>
