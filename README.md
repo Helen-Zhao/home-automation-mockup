@@ -3,9 +3,9 @@ A mock up/click dummy of a web interface for a home automation website. Not yet 
 
 Created using HTML/JS/CSS and the following:
  - Google's Material Design Lite (https://getmdl.io/)
-  - Cards, switches, icons and slider
+  - Cards, switches, icons, sliders etc.
  - Bootstrap (http://getbootstrap.com/getting-started/)
-  - Accordion panels
+  - Accordion panels, columns etc.
  - Material Design for Bootstrap Free (http://mdbootstrap.com/material-design-for-bootstrap/)
   - Fonts, navbar and other components
  - Masonry
